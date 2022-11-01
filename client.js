@@ -12,11 +12,21 @@ const connect = function() {
 
   conn.on("connect", (connect) => {
     console.log("Successfully connected to game server")
+    conn.write("Name: LML");
+    // conn.write("Move: up");
   });
 
-  conn.on("connect", (connect) => {
-    conn.write("Name: LML")
-  });
+  setTimeout(() => {
+    conn.write("Move: up");
+  }, 3000);
+
+  setTimeout(() => {
+    conn.write("Move: left");
+  }, 6000);
+
+  setTimeout(() => {
+    conn.write("Move: up");
+  }, 9000);
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
